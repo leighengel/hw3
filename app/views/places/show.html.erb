@@ -1,0 +1,12 @@
+
+<h1><%= @place.name %></h1>
+
+<ul>
+  <% @place.journal_entries.each do |entry| %>
+    <li>
+      <strong><%= entry.title %></strong>
+      <p><%= entry.date %></p>
+      <p><%= entry.description %></p>
+    </li>
+  <% end %>
+</ul>

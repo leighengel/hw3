@@ -15,30 +15,24 @@ class PlacesController < ApplicationController
     # render view with new Company form
   end
 
-  # def create
-  #   # start with a new Company
-  #   # assign user-entered form data to Company's columns
-  #   # save Company row
-  #   # redirect user
-  # end
-
-  # def edit
-  #   # find a Company
-  #   # render view with edit Company form
-  # end
-
-  # def update
-  #   # find a Company
-  #   # assign user-entered form data to Company's columns
-  #   # save Company row
-  #   # redirect user
-  # end
-
-  # def destroy
-  #   # find a Company
-  #   # destroy Company row
-  #   # redirect user
-  # end
+  class PlacesController < ApplicationController
+    def index
+      # Fetch all places
+      @places = Place.all
+    end
+  
+    def show
+      # Fetch the place based on the id from the URL
+      @place = Place.find(params[:id])
+    end
+  
+    def new
+      # Render view with new Place form
+    end
+  
+    # Other actions...
+  end
+  
 
 end
 
