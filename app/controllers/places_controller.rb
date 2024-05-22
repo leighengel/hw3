@@ -1,19 +1,5 @@
-class PlacesController < ApplicationController
 
 
-  def index
-    # find all Company rows
-    # render companies/index view
-  end
-
-  def show
-    # find a Company
-    # render companies/show view with details about Company
-  end
-
-  def new
-    # render view with new Company form
-  end
 
   class PlacesController < ApplicationController
     def index
@@ -23,16 +9,34 @@ class PlacesController < ApplicationController
   
     def show
       # Fetch the place based on the id from the URL
-      @place = Place.find(params[:id])
+      @place = Place.find_by({"id" => params["id"]})
     end
   
     def new
       # Render view with new Place form
+
+      @place = Place.new
+
     end
   
     # Other actions...
-  end
-  
 
+  
+  def create
+    #start with entry 
+
+    @place = Place.new
+
+    @place["name"] = params["name"]
+
+    #save entry 
+
+    @place.save
+
+    #redirect user 
+
+   redirect_to "/places"
+
+  end 
 end
 

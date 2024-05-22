@@ -3,17 +3,12 @@
 <h1>Places I've Been</h1>
 
 
-<! –– Leigh Comment: Add a new place ––>
-<p><a href="/places/1">Mexico</p>
+<% for place in @places %>
+    <li> 
+    <p><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></p>
+    </li>
+
+   <% end %>
 
 <! –– Leigh Comment: Add a new place ––>
-<p><a href="/places/2">Charleston</p>
-
-<! –– Leigh Comment: Add a new place ––>
-<p><a href="/places/3">Bejing</p>
-
-<! –– Leigh Comment: Add a new place ––>
-<p><a href="/places/4">Amsterdamn</p>
-
-<! –– Leigh Comment: Add a new place ––>
-<p><a href="/places/5">New Place</p>
+<p><a href="/places/new">New Place</p>
